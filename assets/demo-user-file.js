@@ -1,19 +1,20 @@
 document.getElementById("user-file").addEventListener("change", function (ev) {
 	document.getElementById("error-on-try").innerHTML = "";
 	document.getElementById("error-on-try").style.display = "none";
-	var blob = ev.target.files[0];
-	heic2any({
-		blob: blob,
-		toType: "image/png",
-	})
-		.then(function (resultBlob) {
-			saveFile(resultBlob, blob.name + ".png");
+	for (blob in ev.target.files){
+		heic2any({
+			blob: blob,
+			toType: "image/png",
 		})
-		.catch(function (x) {
-			document.getElementById("error-on-try").style.display = "block";
-			document.getElementById("error-on-try").innerHTML =
-				"Error code: <code>" + x.code + "</code> " + x.message;
-		});
+			.then(function (resultBlob) {
+				saveFile(resultBlob, blob.name + ".png");
+			})
+			.catch(function (x) {
+				document.getElementById("error-on-try").style.display = "block";
+				document.getElementById("error-on-try").innerHTML =
+					"Error code: <code>" + x.code + "</code> " + x.message;
+			});
+	}
 });
 function saveFile(blob, filename) {
 	if (window.navigator.msSaveOrOpenBlob) {

@@ -1,7 +1,7 @@
 document.getElementById("user-file").addEventListener("change", function (ev) {
 	document.getElementById("error-on-try").innerHTML = "";
 	document.getElementById("error-on-try").style.display = "none";
-	for (blob in ev.target.files){
+	Array.from(ev.target.files).forEach(blob => { 
 		heic2any({
 			blob: blob,
 			toType: "image/png",
@@ -14,7 +14,7 @@ document.getElementById("user-file").addEventListener("change", function (ev) {
 				document.getElementById("error-on-try").innerHTML =
 					"Error code: <code>" + x.code + "</code> " + x.message;
 			});
-	}
+	});
 });
 function saveFile(blob, filename) {
 	if (window.navigator.msSaveOrOpenBlob) {

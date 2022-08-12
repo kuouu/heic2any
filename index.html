@@ -48,11 +48,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a
-						class="navbar-brand"
-						href="http://alexcorvi.github.io/heic2any/"
-						>Heic2any</a
-					>
+					<a class="navbar-brand" style="font-weight: bolder;">
+						Heic2any
+					</a>
 				</div>
 				<nav
 					class="collapse navbar-collapse bs-navbar-collapse"
@@ -84,12 +82,10 @@
 					HEIC/HEIF image files to JPEG, PNG, or GIF.
 				</p>
 				<p class="lead">
-					<a
-						data-bootbox="download-popup"
-						data-bootbox-size="large"
-						class="btn btn-outline-inverse btn-lg"
-						>Download</a
-					>
+					<div>
+						<label for="user-file" class="btn btn-outline-inverse btn-lg">Select Images</label>
+						<input id="user-file" style="visibility:hidden;" type="file" multiple>
+					</div>
 				</p>
 			</div>
 		</div>
@@ -140,19 +136,17 @@ $ yarn add heic2any</code></pre>
 				<div class="col-md-9" role="main">
 					<section class="bs-docs-section">
 						<h1 id="demo" class="page-header">
-							Demo
+							Original Author
 						</h1>
 						<div id="demo-content">
 							<div>
-								<h3 id="try">Try it with your files</h3>
-								<input type="file" id="user-file" multiple/>
-								<p>
-									<i style="font-size: 13px;">
-										Result will be converted to
-										<code>png</code> and downloaded to your
-										device once the conversion is done
-									</i>
-								</p>
+								<h3 id="try">alexcorvi</h3>
+								<a
+									href="https://github.com/alexcorvi/heic2any" 
+									class="btn btn-primary"
+								>
+									GitHub repo
+								</a>
 								<p>
 									<i
 										style="font-size: 13px;"

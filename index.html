@@ -28,6 +28,57 @@
 				border: 1px solid red;
 				display: none;
 			}
+			.modal-shadow {
+				position: absolute;
+				top: 0px;
+				z-index: 1000;
+				width: 100vw;
+				height: 100%;
+				background: rgba(0, 0, 0, .5);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.modal-body {
+				background: #fff;
+				width: 300px;
+				height: 200px;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			}
+			.spinner {
+				width: 30px;
+    			height: 30px;
+				margin: 10px;
+				border: 0.25em solid #673ab7;
+				border-right-color: transparent;
+				border-radius: 50%;
+				animation: spinner .75s linear infinite;
+			}
+			@-webkit-keyframes spinner {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+			}
+			@keyframes spinner {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+			}
 		</style>
 	</head>
 
@@ -86,6 +137,15 @@
 						<input id="user-file" style="visibility:hidden;" type="file" multiple>
 					</div>
 				</p>
+			</div>
+		</div>
+
+		<div id="modal" class="modal-shadow" style="display: none;">
+			<div class="modal-body">
+				<div class="spinner"></div>
+				<div id="loading-text" class="modal-text">
+					processing...
+				</div>
 			</div>
 		</div>
 
